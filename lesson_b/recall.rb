@@ -1,5 +1,4 @@
 ﻿require 'sinatra'
-require 'sinatra/reloader' if development?
 require 'data_mapper'
 
 SITE_TITLE = "Recall"  
