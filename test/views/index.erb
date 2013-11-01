@@ -4,10 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>index</title>
+  <script src="/js/libs/jquery.js"></script>
+  <script src="/js/libs/helper.js"></script>
 </head>
 <body>
 
-sss
+<form method="post" action="http://up.qiniu.com/" enctype="multipart/form-data">
+  <!--
+  <input name="key" type="hidden" value="<resource key>">
+  <input name="x:<custom_field_name>" type="hidden" value="<custom value>">
+  -->
+  <input name="token" type="hidden" value="<%= @upload_token %>">
+  <input id="up" name="file" type="button" value="upupup" />
+  <input type="submit" value="Upload File" />
+</form>
+
+<button type="button" id="btn" >upload!!!!!!!!!</button>
+
+
+<script>
+
+  var sendPost = function() {
+  
+    var attrObj = {
+      'method': 'post',
+      'action': 'http://up.qiniu.com/',
+      'enctype': 'multipart/form-data'
+    };
+    
+    var paramObj = {
+      'token': '<%= @upload_token %>',
+      'file': 'config.yml',
+      'key': 'test_file1'
+    };
+    
+    helper.postToUrl(attrObj, paramObj);
+  
+  };
+  
+  $("#up").click(function() {
+    sendPost();
+  });
+
+</script>
 
 </body>
 </html>
