@@ -15,7 +15,8 @@
   <input name="x:<custom_field_name>" type="hidden" value="<custom value>">
   -->
   <input name="token" type="hidden" value="<%= @upload_token %>">
-  <input id="up" name="file" type="button" value="upupup" />
+  <input name="accept" type="hidden" value="text/plain; charset=utf-8">
+  <input type="file" name="file" type="button" value="up" />
   <input type="submit" value="Upload File" />
 </form>
 
